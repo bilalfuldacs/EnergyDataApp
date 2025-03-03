@@ -50,11 +50,16 @@ A React-based dashboard application for monitoring and analyzing energy consumpt
 Installation & Setup
 
 Clone repository
-git clone https://github.com/yourusername/energy-dashboard.git
+git clone repo link
+
 Install dependencies
+
 cd energy-dashboard
+
 npm install
+
 Start development server
+
 npm start
 
 Open your browser and navigate to:
