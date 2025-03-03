@@ -1,70 +1,113 @@
-# Getting Started with Create React App
+# Energy Consumption Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React-based dashboard application for monitoring and analyzing energy consumption patterns across different systems and energy forms. This application provides real-time visualization and analysis of energy consumption data with filtering capabilities.
 
-## Available Scripts
+![Dashboard Preview](dashboard-preview.png)
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+### 1. Interactive Filtering
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Energy Form Selection**
+  - Heat
+  - Cold
+  - Electricity
+- **System Type Filtering**
+  - Building systems
+  - Store facilities
+  - Production units
+- **Date Range Selection**
+  - Flexible date range picker
+  - Real-time updates
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 2. Data Visualization
 
-### `npm test`
+- **Energy Consumption Chart**
+  - Interactive line chart
+  - Time-based consumption trends
+  - Responsive design
+- **Top Consumers Grid**
+  - Sortable data grid
+  - Consumption rankings
+  - System-wise breakdown
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Tech Stack
 
-### `npm run build`
+- **Frontend Framework**: React 19
+- **UI Components**: Material-UI v5
+- **Data Visualization**: Recharts
+- **Data Grid**: MUI X-Data-Grid
+- **Development Tools**: Create React App
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Prerequisites
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Node.js (v14 or higher)
+- npm (v6 or higher)
+- Backend API running on `http://127.0.0.1:8000`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Quick Start
 
-### `npm run eject`
+Installation & Setup
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Clone repository
+git clone https://github.com/yourusername/energy-dashboard.git
+Install dependencies
+cd energy-dashboard
+npm install
+Start development server
+npm start
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Open your browser and navigate to:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+http://localhost:3000
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Usage
 
-## Learn More
+1. Select Filters
+   Use the Energy Form dropdown to select the type of energy (e.g., electricity, heat, cold).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Use the System Type dropdown to filter by specific systems (e.g., Building A, Store B).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Use the Date Range picker to select a start and end date.
 
-### Code Splitting
+2. View Data
+   The Energy Consumption Chart will display the energy consumption trends over time based on the selected filters.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+The Top Consumers Grid will show the systems with the highest energy consumption.
 
-### Analyzing the Bundle Size
+3. Explore Data
+   Hover over the chart to view detailed consumption data for specific dates.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Use the pagination controls in the Top Consumers Grid to navigate through the data.
 
-### Making a Progressive Web App
+Key Components
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+1. Dashboard
+   The main component that manages the state and data flow.
 
-### Advanced Configuration
+Displays the FilterSection, EnergyChart, and TopConsumers components.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+2. FilterSection
+   Handles user input for filtering data by energy form, system type, and date range.
 
-### Deployment
+Dynamically updates the dashboard based on selected filters.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+3. EnergyChart
+   Displays energy consumption trends over time using a line chart.
 
-### `npm run build` fails to minify
+Built using Recharts for interactive and responsive visualizations.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+4. TopConsumers
+   Displays a table of the top energy consumers.
+
+Supports sorting, pagination, and dynamic updates based on filters.
+
+Custom Hooks and Utilities
+
+1. useEnergyData
+   Fetches energy consumption data from the backend API.
+
+Handles loading and error states.
+
+2. dataUtils
+   Utility functions for filtering and preparing data for the chart and table.
